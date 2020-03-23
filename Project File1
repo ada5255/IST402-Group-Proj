@@ -1,0 +1,19 @@
+import time
+
+def recursion1(depth=4):
+    if depth == 3:
+        return -1
+    if depth == 2:
+        return -2
+    if depth == 1:
+        return 3
+    else:
+        return recursion1(depth-1) + 2 * recursion1(depth-2) - 3 * recursion1(depth-3)
+
+for n in range(1,41):
+    start = time.time()
+    val = recursion1(n)
+    duration = time.time() - start
+    print(f'Normal Calculation for n={n} took {duration:.2f}s  Result: {val}')
+else:
+    print(f'The end.')
